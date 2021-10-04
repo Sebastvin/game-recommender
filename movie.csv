@@ -1,0 +1,101 @@
+,movie,year,timeMin,imdb,metascore,votes,us_gross
+0,The Shawshank Redemption,1994,142,9.3,80,"2,468,640",$28.34M
+1,The Godfather,1972,175,9.2,100,"1,706,249",$134.97M
+2,The Dark Knight,2008,152,9,84,"2,423,064",$534.86M
+3,The Godfather: Part II,1974,202,9,90,"1,185,251",$57.30M
+4,12 Angry Men,1957,96,9,96,"730,656",$4.36M
+5,The Lord of the Rings: The Return of the King,2003,201,8.9,94,"1,712,097",$377.85M
+6,Pulp Fiction,1994,154,8.9,94,"1,911,375",$107.93M
+7,Schindler's List,1993,195,8.9,94,"1,268,294",$96.90M
+8,Inception,2010,148,8.8,74,"2,173,935",$292.58M
+9,Fight Club,1999,139,8.8,66,"1,943,233",$37.03M
+10,The Lord of the Rings: The Fellowship of the Ring,2001,178,8.8,92,"1,733,380",$315.54M
+11,Forrest Gump,1994,142,8.8,82,"1,908,243",$330.25M
+12,"The Good, the Bad and the Ugly",1966,178,8.8,90,"718,792",$6.10M
+13,The Lord of the Rings: The Two Towers,2002,179,8.7,87,"1,547,870",$342.55M
+14,The Matrix,1999,136,8.7,73,"1,762,812",$171.48M
+15,Goodfellas,1990,146,8.7,90,"1,071,760",$46.84M
+16,Star Wars: Episode V - The Empire Strikes Back,1980,124,8.7,82,"1,206,649",$290.48M
+17,One Flew Over the Cuckoo's Nest,1975,133,8.7,84,"955,110",$112.00M
+18,Parasite,2019,132,8.6,96,"663,789",$53.37M
+19,Interstellar,2014,169,8.6,74,"1,618,870",$188.02M
+20,City of God,2002,130,8.6,79,"722,663",$7.56M
+21,Spirited Away,2001,125,8.6,96,"695,032",$10.06M
+22,Saving Private Ryan,1998,169,8.6,91,"1,293,775",$216.54M
+23,The Green Mile,1999,189,8.6,61,"1,205,480",$136.80M
+24,Life Is Beautiful,1997,116,8.6,59,"653,017",$57.60M
+25,Se7en,1995,127,8.6,65,"1,519,149",$100.13M
+26,The Silence of the Lambs,1991,118,8.6,85,"1,333,827",$130.74M
+27,Star Wars: Episode IV - A New Hope,1977,121,8.6,90,"1,278,463",$322.74M
+28,Hara-Kiri,1962,133,8.6,85,"49,298",NaN
+29,Seven Samurai,1954,207,8.6,98,"329,333",$0.27M
+30,It's a Wonderful Life,1946,130,8.6,89,"422,806",NaN
+31,Whiplash,2014,106,8.5,88,"765,053",$13.09M
+32,The Intouchables,2011,112,8.5,57,"797,991",$13.18M
+33,The Prestige,2006,130,8.5,66,"1,246,713",$53.09M
+34,The Departed,2006,151,8.5,85,"1,242,351",$132.38M
+35,The Pianist,2002,150,8.5,85,"771,866",$32.57M
+36,Gladiator,2000,155,8.5,67,"1,400,645",$187.71M
+37,American History X,1998,119,8.5,62,"1,068,504",$6.72M
+38,The Usual Suspects,1995,106,8.5,77,"1,029,977",$23.34M
+39,Léon: The Professional,1994,110,8.5,64,"1,083,056",$19.50M
+40,The Lion King,1994,88,8.5,88,"985,087",$422.78M
+41,Terminator 2: Judgment Day,1991,137,8.5,75,"1,034,922",$204.84M
+42,Cinema Paradiso,1988,155,8.5,80,"245,720",$11.99M
+43,Grave of the Fireflies,1988,89,8.5,94,"253,196",NaN
+44,Back to the Future,1985,116,8.5,87,"1,114,639",$210.61M
+45,Once Upon a Time in the West,1968,165,8.5,80,"314,730",$5.32M
+46,Psycho,1960,109,8.5,97,"631,480",$32.00M
+47,Rear Window,1954,112,8.5,100,"465,987",$36.76M
+48,Casablanca,1942,102,8.5,100,"543,497",$1.02M
+49,Modern Times,1936,87,8.5,96,"228,991",$0.16M
+50,City Lights,1931,87,8.5,99,"176,191",$0.02M
+51,Hamilton,2020,160,8.4,90,"74,192",NaN
+52,Capernaum,2018,126,8.4,75,"75,825",$1.66M
+53,Joker,2019,122,8.4,59,"1,071,125",$335.45M
+54,Your Name.,2016,106,8.4,79,"225,663",$5.02M
+55,Spider-Man: Into the Spider-Verse,2018,117,8.4,87,"429,004",$190.24M
+56,Avengers: Endgame,2019,181,8.4,78,"942,993",$858.37M
+57,Avengers: Infinity War,2018,149,8.4,68,"926,669",$678.82M
+58,Coco,I) (2017,105,8.4,81,"433,182",$209.73M
+59,Django Unchained,2012,165,8.4,81,"1,429,182",$162.81M
+60,The Dark Knight Rises,2012,164,8.4,78,"1,580,141",$448.14M
+61,3 Idiots,2009,170,8.4,67,"368,328",$6.53M
+62,Like Stars on Earth,2007,165,8.4,NaN,"180,980",$1.22M
+63,WALL·E,2008,98,8.4,95,"1,043,833",$223.81M
+64,The Lives of Others,2006,137,8.4,89,"373,118",$11.29M
+65,Oldboy,2003,120,8.4,77,"541,635",$0.71M
+66,Memento,2000,113,8.4,80,"1,170,467",$25.54M
+67,Princess Mononoke,1997,134,8.4,76,"365,465",$2.38M
+68,Indiana Jones and the Raiders of the Lost Ark,1981,115,8.4,85,"917,903",$248.16M
+69,The Shining,1980,146,8.4,66,"943,944",$44.02M
+70,Apocalypse Now,1979,147,8.4,94,"630,488",$83.47M
+71,Alien,1979,117,8.4,89,"824,403",$78.90M
+72,High and Low,1963,143,8.4,NaN,"39,733",NaN
+73,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964,95,8.4,97,"468,077",$0.28M
+74,Witness for the Prosecution,1957,116,8.4,NaN,"116,649",$8.18M
+75,Paths of Glory,1957,88,8.4,90,"187,394",NaN
+76,Sunset Blvd.,1950,110,8.4,NaN,"211,354",NaN
+77,The Great Dictator,1940,125,8.4,NaN,"213,458",$0.29M
+78,The Hunt,2012,115,8.3,77,"304,008",$0.69M
+79,Inglourious Basterds,2009,153,8.3,69,"1,334,958",$120.54M
+80,Eternal Sunshine of the Spotless Mind,2004,108,8.3,89,"949,481",$34.40M
+81,Requiem for a Dream,2000,102,8.3,68,"796,594",$3.64M
+82,American Beauty,1999,122,8.3,84,"1,105,411",$130.10M
+83,Good Will Hunting,1997,126,8.3,70,"901,975",$138.43M
+84,Toy Story,1995,81,8.3,95,"928,098",$191.80M
+85,Braveheart,1995,178,8.3,68,"989,490",$75.60M
+86,Reservoir Dogs,1992,99,8.3,79,"959,151",$2.83M
+87,Come and See,1985,142,8.3,NaN,"68,271",NaN
+88,Aliens,1986,137,8.3,84,"679,222",$85.16M
+89,Once Upon a Time in America,1984,229,8.3,75,"329,722",$5.32M
+90,Amadeus,1984,160,8.3,88,"382,710",$51.97M
+91,Star Wars: Episode VI - Return of the Jedi,1983,131,8.3,58,"987,347",$309.13M
+92,Das Boot,1981,149,8.3,86,"240,847",$11.49M
+93,2001: A Space Odyssey,1968,149,8.3,84,"630,520",$56.95M
+94,North by Northwest,1959,136,8.3,98,"312,468",$13.28M
+95,Vertigo,1958,128,8.3,100,"382,662",$3.20M
+96,Singin' in the Rain,1952,103,8.3,99,"228,901",$8.82M
+97,Bicycle Thieves,1948,89,8.3,NaN,"155,839",$0.33M
+98,Citizen Kane,1941,119,8.3,100,"422,886",$1.59M
+99,M,1931,99,8.3,NaN,"150,747",$0.03M
