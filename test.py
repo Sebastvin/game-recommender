@@ -69,4 +69,5 @@ def scraper(data):
 
 
 d = scraper(data_50).append(scraper(data_100)).reset_index(drop=True)
-d.to_csv('movie.csv')
+print(d)
+#d.to_csv('movie.csv')
