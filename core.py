@@ -83,3 +83,7 @@ games = scraper(num_pages, headers)
 
 games.to_csv('dataset_games.csv')
 
+
+games = scraper(1, headers).reset_index()
+games.to_csv('test_games.csv')
+
