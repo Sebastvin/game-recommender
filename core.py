@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-headers = {"Accept-Language": "en-US, en;q=0.5", 'user-agent': 'dada'}
+headers = {"Accept-Language": "en-US, en;q=0.5", 'user-agent': 'xasd'}
 url = "https://www.metacritic.com/browse/games/score/metascore/all/all/filtered?page=0"
 result = requests.get(url, headers=headers)
 soup = BeautifulSoup(result.text, "html.parser")
@@ -19,7 +19,6 @@ def scraper(pages, head):
                 'release_date',
                 'description']
             )
-    print(d)
 
 
     for num_page in range(0, pages):
@@ -79,11 +78,12 @@ def scraper(pages, head):
     return d
 
 #print(scraper(num_pages, headers))
-games = scraper(num_pages, headers)
-
-games.to_csv('dataset_games.csv')
+#games = scraper(num_pages, headers)
 
 
-games = scraper(1, headers).reset_index()
-games.to_csv('test_games.csv')
+#games.to_csv('dataset_games.csv')
+
+
+games = scraper(1, headers).reset_index(drop=True, inplace=False)
+games.to_csv('test_games.csv', index=False)
 
