@@ -63,4 +63,4 @@ def scraper(pages, head):
 
 
 games = scraper(1, headers).reset_index()
-games.to_csv('test_games.csv', index=False)
+games.to_csv('test_games.csv')
