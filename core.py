@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-headers = {"Accept-Language": "en-US, en;q=0.5", 'user-agent': 'dada'}
+headers = {"Accept-Language": "en-US, en;q=0.5", 'user-agent': 'xasd'}
 url = "https://www.metacritic.com/browse/games/score/metascore/all/all/filtered?page=0"
 result = requests.get(url, headers=headers)
 soup = BeautifulSoup(result.text, "html.parser")
@@ -10,6 +10,15 @@ num_pages = int(soup.find('li', class_='page last_page').a.text)
 
 
 def scraper(pages, head):
+    d = pd.DataFrame(columns=[
+        'name_game',
+        'meta_score',
+        'user_score',
+        'platform',
+        'release_date',
+        'description']
+    )
+
     for num_page in range(0, pages):
         urls = "https://www.metacritic.com/browse/games/score/metascore/all/all/filtered?page=" + str(num_page)
         results = requests.get(urls, headers=head)
@@ -50,17 +59,24 @@ def scraper(pages, head):
             text = x.find('div', class_='summary').text.strip()
             description.append(text)
 
-    games = pd.DataFrame({
-        'name_game': name,
-        'meta_score': meta_score,
-        'user_score': user_score,
-        'platform': platform,
-        'release_date': release_date,
-        'description': description,
-    })
+            final_data = pd.DataFrame({
+                'name_game': name,
+                'meta_score': meta_score,
+                'user_score': user_score,
+                'platform': platform,
+                'release_date': release_date,
+                'description': description,
+            })
 
-    return games
+        d = d.append(final_data, ignore_index=True)
+
+    return d
 
 
-games = scraper(1, headers).reset_index()
-games.to_csv('test_games.csv', index=False)
+# print(scraper(num_pages, headers))
+games = scraper(num_pages, headers)
+
+games.to_csv('dataset_games.csv')
+
+# games = scraper(1, headers).reset_index(drop=True, inplace=False)
+# games.to_csv('test_games.csv', index=False)

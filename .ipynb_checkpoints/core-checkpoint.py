@@ -2,7 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
+<<<<<<< HEAD
 headers = {"Accept-Language": "en-US, en;q=0.5", 'user-agent': 'dada'}
+=======
+headers = {"Accept-Language": "en-US, en;q=0.5", 'user-agent': 'xasd'}
+>>>>>>> 9b3c74378f2f980830ebcb9a6cb5791636b0e686
 url = "https://www.metacritic.com/browse/games/score/metascore/all/all/filtered?page=0"
 result = requests.get(url, headers=headers)
 soup = BeautifulSoup(result.text, "html.parser")
@@ -10,6 +14,20 @@ num_pages = int(soup.find('li', class_='page last_page').a.text)
 
 
 def scraper(pages, head):
+<<<<<<< HEAD
+=======
+
+    d = pd.DataFrame(columns=[
+                'name_game',
+                'meta_score',
+                'user_score',
+                'platform',
+                'release_date',
+                'description']
+            )
+
+
+>>>>>>> 9b3c74378f2f980830ebcb9a6cb5791636b0e686
     for num_page in range(0, pages):
         urls = "https://www.metacritic.com/browse/games/score/metascore/all/all/filtered?page=" + str(num_page)
         results = requests.get(urls, headers=head)
@@ -23,6 +41,10 @@ def scraper(pages, head):
         release_date = []
         description = []
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9b3c74378f2f980830ebcb9a6cb5791636b0e686
         for x in data:
             # print(num, x.find('a', class_='title').h3.text)  names passed
             title = x.find('a', class_='title').h3.text
@@ -50,6 +72,7 @@ def scraper(pages, head):
             text = x.find('div', class_='summary').text.strip()
             description.append(text)
 
+<<<<<<< HEAD
     games = pd.DataFrame({
         'name_game': name,
         'meta_score': meta_score,
@@ -64,3 +87,30 @@ def scraper(pages, head):
 
 games = scraper(1, headers).reset_index()
 games.to_csv('test_games.csv')
+=======
+            final_data = pd.DataFrame({
+                'name_game': name,
+                'meta_score': meta_score,
+                'user_score': user_score,
+                'platform': platform,
+                'release_date': release_date,
+                'description': description,
+            })
+
+        d = d.append(final_data, ignore_index=True)
+
+
+
+    return d
+
+#print(scraper(num_pages, headers))
+#games = scraper(num_pages, headers)
+
+
+#games.to_csv('dataset_games.csv')
+
+
+games = scraper(1, headers).reset_index(drop=True, inplace=False)
+games.to_csv('test_games.csv', index=False)
+
+>>>>>>> 9b3c74378f2f980830ebcb9a6cb5791636b0e686
