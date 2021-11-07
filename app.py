@@ -19,7 +19,7 @@ def get_data():
         user = request.form['search']
         game = get_recommendations(str(user)).values
         root = "Recommendations for "
-        return render_template('index.html', test=game[:5], test2 = game[5:], name= root + str(user))
+        return render_template('index.html', test=game, name= root + str(user))
 
 
 if __name__ == "__main__":

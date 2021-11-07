@@ -1,14 +1,9 @@
-table * {
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  height: 30px;
-  width: 250px;
+.row-cols-5
+{
+    border-style: solid;
 }
 
-body
+.col
 {
-    background-color: red;
-
+    border: 2px solid black;
 }
