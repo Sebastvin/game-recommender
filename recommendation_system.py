@@ -8,8 +8,8 @@ from ast import literal_eval
 pd.options.mode.chained_assignment = None
 
 # Read datasets
-metadata = pd.read_csv('final_dataset.csv', converters={'platform': literal_eval})
-features = pd.read_csv('comeon.csv')
+metadata = pd.read_csv('datasets/final_dataset.csv', converters={'platform': literal_eval})
+features = pd.read_csv('datasets/comeon.csv')
 
 # Add features to metadata
 metadata = metadata.join(features)
@@ -36,27 +36,21 @@ indices = pd.Series(metadata.index, index=metadata['name_game'])
 
 def get_recommendations(name_game, cosine_sim=cosine_sim):
     # Get the index of the game thath matches the title
-
     idx = indices[name_game]
 
     # Get the pairwise similarity scores of all games with that game
-
     sim_scores = list(enumerate(cosine_sim[idx]))
 
     # Sort the games based on the similarity scores
-
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
 
     # Get the scores of the 10 most similar games
-
     sim_scores = sim_scores[1:11]
 
     # Get the games indices
-
     movie_indices = [i[0] for i in sim_scores]
 
     # Return the top 10 most similar games
-
     return metadata['name_game'].iloc[movie_indices]
 
 def create_soup(x):

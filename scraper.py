@@ -76,7 +76,7 @@ def scraper(pages, head):
 # print(scraper(num_pages, headers))
 games = scraper(num_pages, headers)
 
-games.to_csv('dataset_games.csv')
+games.to_csv('datasets/dataset_games.csv')
 
 # games = scraper(1, headers).reset_index(drop=True, inplace=False)
 # games.to_csv('test_games.csv', index=False)
