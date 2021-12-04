@@ -21,7 +21,7 @@ def get_data():
         des = game.iloc[:, 0].values
         print(des)
         root = "Recommendations for "
-        return render_template('content.html', game=des, name= root + str(user), des=des, urlsImg = urlsImg)
+        return render_template('content.html', game=des, name= root + str(user), des=des, urlsImg=urlsImg)
 
 
 if __name__ == "__main__":

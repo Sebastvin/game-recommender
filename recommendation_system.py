@@ -51,7 +51,7 @@ def get_recommendations(name_game, cosine_sim=cosine_sim):
     movie_indices = [i[0] for i in sim_scores]
 
     # Return the top 10 most similar games
-    return metadata[['name_game', 'description']].iloc[movie_indices]
+    return metadata[['name_game']].iloc[movie_indices]
 
 def create_soup(x):
     return ' '.join(x['platform']).lower() + ' ' + ''.join(str(x['developer']).split()) + ' ' + ' '.join(x['genre']) + ' ' + str(x['type']) + ' ' + str(x['rating'])
@@ -73,6 +73,8 @@ cosine_sim2 = cosine_similarity(count_matrix, count_matrix)
 # Reset index of your main DataFrame and construct reverse mapping as before
 metadata = metadata.reset_index()
 indices = pd.Series(metadata.index, index=metadata['name_game'])
+
+
 
 
 

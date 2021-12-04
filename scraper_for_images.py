@@ -2,11 +2,31 @@
 
 import requests, lxml, re, json
 from bs4 import BeautifulSoup
+import urllib
+import random
+import time
 
-def get_img(titleGame: str):
+
+
+
+
+def get_img(titleGame: str, index):
+    agents = ["Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102",
+              "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36 "
+              "OPR/38.0.2220.41",
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 "
+              "Safari/537.36 Edg/91.0.864.59",
+              "Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0)",
+              "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 "
+              "Safari/601.3.9",
+              "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36"
+              ]
+
+    random_agent = random.randint(0, 6)
+
+
     headers = {
-        "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582"
+        "User-Agent": agents[random_agent]
     }
 
     params = {
@@ -15,6 +35,9 @@ def get_img(titleGame: str):
         "ijn": "0",
     }
 
+    timeout = random.randint(5, 30)
+    print(timeout)
+    time.sleep(timeout)
     html = requests.get("https://www.google.com/search", params=params, headers=headers)
     soup = BeautifulSoup(html.text, 'lxml')
 
@@ -59,10 +82,34 @@ def get_img(titleGame: str):
 
         if 'wikia' not in original_size_img:
             return original_size_img
-        # print(original_size_img)
+        print(original_size_img)
         counter += 1
 
+    print('\nFull Resolution Images:')  # in order
+    for index, fixed_full_res_image in enumerate(matched_google_full_resolution_images):
+        # https://stackoverflow.com/a/4004439/15164646 comment by Frédéric Hamidi
+        original_size_img_not_fixed = bytes(fixed_full_res_image, 'ascii').decode('unicode-escape')
+        original_size_img = bytes(original_size_img_not_fixed, 'ascii').decode('unicode-escape')
+        print(original_size_img)
 
+        # ------------------------------------------------
+        # Download original images
+
+        # print(f'Downloading {index} image...')
+
+        opener = urllib.request.build_opener()
+        opener.addheaders = [('User-Agent',
+                              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19582')]
+        urllib.request.install_opener(opener)
+
+        urllib.request.urlretrieve(original_size_img, f'pictures/{index}_{counter}.jpg')
+
+
+
+
+
+
+get_img("GTA V", 0)
 def listUrls(data):
     result = []
     for x in data:
