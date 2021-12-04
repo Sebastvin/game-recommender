@@ -11,6 +11,8 @@
   height: 90%;
   background-color: blue;
 }
+
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: calc(var(--jumbotron-padding-y) * 2);

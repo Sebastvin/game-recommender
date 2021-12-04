@@ -28,23 +28,22 @@
             <p><center>{{name}}</center></p>
             <div class="container">
               <div class="row">
-               {% for x in test %}
-                <div class="col-md-4">
-                  <div class="card mb-2 box-shadow">
-                    <img class="card-img-top" width="150" height="200"
-                         src="https://am-a.akamaihd.net/image?f=https://news-a.akamaihd.net/public/images/pages/2017/april/cosmic-master/img/cosmic-master-yi-wp.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+               {% for x in range(12) %}
+                    <div class="col-md-3">
+                      <div class="card mb-2 box-shadow">
+                        <img class="card-img-top" width="280" height="300" src={{urlsImg[x]}}>
+                        <div class="card-body">
+                          <p class="card-text">{{game[x]}}</p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                              <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                          </div>
                         </div>
-                        <small class="text-muted">9 mins</small>
                       </div>
                     </div>
-                  </div>
-                </div>
               {% endfor %}
               </div>
             </div>
