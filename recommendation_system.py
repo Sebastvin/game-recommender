@@ -51,7 +51,7 @@ def get_recommendations(name_game, cosine_sim=cosine_sim):
     movie_indices = [i[0] for i in sim_scores]
 
     # Return the top 10 most similar games
-    return metadata[['name_game']].iloc[movie_indices]
+    return metadata.iloc[movie_indices]
 
 def create_soup(x):
     return ' '.join(x['platform']).lower() + ' ' + ''.join(str(x['developer']).split()) + ' ' + ' '.join(x['genre']) + ' ' + str(x['type']) + ' ' + str(x['rating'])
@@ -75,7 +75,7 @@ metadata = metadata.reset_index()
 indices = pd.Series(metadata.index, index=metadata['name_game'])
 
 
-
+# print(get_recommendations("FIFA 18").iloc[:, 2].tolist())
 
 
 
