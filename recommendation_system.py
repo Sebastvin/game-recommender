@@ -75,7 +75,7 @@ metadata = metadata.reset_index()
 indices = pd.Series(metadata.index, index=metadata['name_game'])
 
 
-# print(get_recommendations("FIFA 18").iloc[:, 2].tolist())
+# print(get_recommendations("FIFA 18").describe())
 
 
 

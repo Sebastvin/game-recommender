@@ -17,14 +17,13 @@ def get_data():
     if request.method == 'POST' or request.method == 'GET':
         user = request.form['search']
         game = get_recommendations(str(user))
-        #urlsImg = listUrls(game.iloc[:, 0].values)
         des = game.iloc[:, 1].values
         score = game.iloc[:, 2].tolist()
         link = game.iloc[:, 6].tolist()
-        print(link)
+        index =  game.iloc[:, 0].tolist()
         root = "Recommendations for "
         return render_template('content.html', game=des, name= root + str(user), des=des, urlsImg=des, score=score,
-                               link=link)
+                               link=link, index=index)
 
 
 if __name__ == "__main__":
