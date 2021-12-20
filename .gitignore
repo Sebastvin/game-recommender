@@ -1,4 +1,7 @@
 /venv
 .idea
 /.idea
-/static/pictures/
+/__pychache__gi
+*__pycache__/
+cosine_sim.csv
+/static/pictures
