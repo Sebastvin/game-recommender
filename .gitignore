@@ -5,3 +5,4 @@
 *__pycache__/
 cosine_sim.csv
 /static/pictures
+.ipynb_checkpoints
