@@ -47,7 +47,14 @@ footer {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 50px;
-    background-color: white;
+    ztext-align: center;
+}
+
+.tested
+{
+   font-size: 16px;
+   color: white;
+   text-align: center;
 }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }

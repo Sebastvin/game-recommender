@@ -32,14 +32,20 @@
   max-width: 35rem;
 }
 
-.footer {
+footer {
   position: relative;
   margin-top: -150px; /* negative value of footer height */
-  height: 150px;
+  height: 200px;
   clear:both;
-  padding-top:20px;
+  padding-top:150px;
   text-align: center;
 }
 
+.tested
+{
+   font-size: 24px;
+   color: white;
+   text-align: center;
+}
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
