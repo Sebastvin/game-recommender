@@ -1,21 +1,31 @@
-import requests, lxml, re, json
-from bs4 import BeautifulSoup
+import json
+import random
+import re
+import ssl
+import time
 import urllib
-import requests
-import time, random
+
 import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 def get_images_data(idx, game_name):
     agents = ["Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102",
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 "
-              "Safari/537.36 Edg/91.0.864.59",
-              "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 "
-              "Safari/601.3.9",
-              "Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36"
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 "
+              "Safari/537.36",
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.106",
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3865.111 "
+              "Safari/537.45",
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3541.22",
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3710.169",
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.3401.13 "
+              "Safari/552.75"
               ]
 
-    random_agent = random.randint(0, 5)
+    random_agent = random.randint(0, 6)
 
     headers = {
         "User-Agent": agents[random_agent],
@@ -23,20 +33,13 @@ def get_images_data(idx, game_name):
     }
 
     params = {
-        "q": game_name + ' game',
+        "q": game_name + "game cover",
         "tbm": "isch",
         "ijn": "0",
     }
 
-    html = requests.get("https://www.google.com/search", params=params, headers=headers)
+    html = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=6)
     soup = BeautifulSoup(html.text, 'lxml')
-
-    # print('\nGoogle Images Metadata:')
-    # for google_image in soup.select('.isv-r.PNCib.MSM1fd.BUooTd'):
-    #     title = google_image.select_one('.VFACy.kGQAp.sMi44c.lNHeqe.WGvvNb')['title']
-    #     source = google_image.select_one('.fxgdke').text
-    #     link = google_image.select_one('.VFACy.kGQAp.sMi44c.lNHeqe.WGvvNb')['href']
-    #     print(f'{title}\n{source}\n{link}\n')
 
     # this steps could be refactored to a more compact
     all_script_tags = soup.select('script')
@@ -79,6 +82,7 @@ def get_images_data(idx, game_name):
 
     counter = 0
     print('\nFull Resolution Images: ', idx)  # in order
+    proxy = "61.233.25.166:80"
     for index, fixed_full_res_image in enumerate(matched_google_full_resolution_images):
         # https://stackoverflow.com/a/4004439/15164646 comment by Frédéric Hamidi
         original_size_img_not_fixed = bytes(fixed_full_res_image, 'ascii').decode('unicode-escape')
@@ -102,8 +106,14 @@ def get_images_data(idx, game_name):
 
 game_names = pd.read_csv("datasets/final_dataset.csv")
 
-for index, row in game_names[:3].iterrows():
-    get_images_data(index, row['name_game'])
-    timeout = random.randint(5, 30)
-    print("Next request: ", timeout)
-    time.sleep(timeout)
+for index, row in game_names[8715:].iterrows():
+    try:
+        get_images_data(index, row['name_game'])
+        timeout = random.randint(1, 10)
+        print("Next request: ", timeout)
+        time.sleep(timeout)
+    except:
+        timeout = random.randint(1, 11)
+        time.sleep(timeout)
+        get_images_data(index, row['name_game'])
+        print("Next request: ", timeout)
