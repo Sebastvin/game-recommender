@@ -109,7 +109,7 @@ def get_img(titleGame: str, index):
 
 
 
-get_img("GTA V", 0)
+
 def listUrls(data):
     result = []
     for x in data:

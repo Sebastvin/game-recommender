@@ -1,4 +1,12 @@
 /venv
 .idea
 /.idea
+<<<<<<< HEAD
 pictures
+=======
+/__pychache__gi
+*__pycache__/
+cosine_sim.csv
+/static/pictures
+.ipynb_checkpoints
+>>>>>>> be0db16b02f39287ca5216324a1416e6f6995547
