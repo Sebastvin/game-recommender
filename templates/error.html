@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Game Recommender</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -12,13 +11,13 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-light" style="background-color: rgb(108,65,188);">
             <div class="d-flex flex-grow-1">
-                <a href="/" class="navbar-brand">Game recommender</a>
+                <a href="/" class="navbar-brand neonText" style="color: white;">Game recommender</a>
                 <form class="mr-2 my-auto w-100 d-inline-block order-1" action="content" method="post">
                     <div class="input-group">
                         <input id="form-autocomplete" type="text" data-provide="typeahead"
-                               class="form-control border border-right-0 typeahead"
+                               class="form-control typeahead"
                                placeholder="Type name game..." name="search" autocomplete="off">
                         <button class="btn btn-outline-success my-0 my-sm-0" type="submit">Search</button>
                     </div>
@@ -32,16 +31,16 @@
    </script>
 
     <main role="main">
-      <section class="jumbotron text-center text-white bg-dark">
+      <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">It looks like you entered the game wrong or it is not listed.</h1>
+          <h1 class="jumbotron-heading neonText">It looks like you entered the game wrong or it is not listed.</h1>
           <p id = "demo" class="lead text-muted">Try again.</div>
       </section>
     </main>
 
 
     <footer class="text-muted tested">
-      <div class="container ">
+      <div class="container neonText">
         <p>Copyright &copy; Sebastian Malon 2021</p>
       </div>
     </footer>

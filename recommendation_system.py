@@ -18,44 +18,27 @@ metadata = metadata.join(features)
 metadata = metadata.dropna(subset=['genre'])
 metadata['genre'] = metadata['genre'].apply(literal_eval)
 
-# Define a TF-IDF Vectorizer Object. Remove all english stop words such as 'the', 'a'
-# tfidf = TfidfVectorizer(stop_words='english')
-#
-# # Replace NaN with an empty string
-# metadata['description'] = metadata['description'].fillna('')
-#
-# # Construct the required TF_IDF matrix by fitting and transformating the data
-# tfidf_matrix = tfidf.fit_transform(metadata['description'])
-#
-# # Compute the cosine similarity matrix
-# cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
-#
-# # Construct a reverse map of indices and games titles
-# indices = pd.Series(metadata.index, index=metadata['name_game'])
-
 
 # Function that takes in game title as input and outputs most similar games
 
 
-
 def create_soup(x):
-    return ' '.join(x['platform']).lower() + ' ' + ''.join(str(x['developer']).split()) + ' ' + ' '.join(x['genre']) + ' ' + str(x['type']) + ' ' + str(x['rating'])
+    return ' '.join(x['platform']).lower() + ' ' + ''.join(str(x['developer']).split()) + ' ' + ' '.join(
+        x['genre']) + ' ' + str(x['type']) + ' ' + str(x['rating'])
+
 
 # Create a new soup feature
 metadata['soup'] = metadata.apply(create_soup, axis=1)
 
-
-
 count = CountVectorizer(stop_words='english')
 count_matrix = count.fit_transform(metadata['soup'])
-
-
 
 cosine_sim2 = cosine_similarity(count_matrix, count_matrix)
 
 # Reset index of your main DataFrame and construct reverse mapping as before
 metadata = metadata.reset_index()
 indices = pd.Series(metadata.index, index=metadata['name_game'])
+
 
 def get_recommendations(name_game, cosine_sim=cosine_sim2):
     # Get the index of the game thath matches the title
@@ -75,9 +58,3 @@ def get_recommendations(name_game, cosine_sim=cosine_sim2):
 
     # Return the top 10 most similar games
     return metadata.iloc[movie_indices]
-
-
-
-
-
-
