@@ -26,9 +26,9 @@ def get_data(new):
     return url
 
 
-if __name__ == '__main__':
-    data = pd.read_csv('datasets/final_dataset.csv')
-    data.platform = data.platform.apply(literal_eval)
-
-    result = get_data(data)
-    result.to_csv('datasets/urls_to_games.csv', index=False)
+# if __name__ == '__main__':
+#     data = pd.read_csv('datasets/final_dataset.csv')
+#     data.platform = data.platform.apply(literal_eval)
+#
+#     result = get_data(data)
+#     result.to_csv('datasets/urls_to_games.csv', index=False)
