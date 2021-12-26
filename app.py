@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for
-from recommendation_system import get_recommendations
 from scraper_for_images import listUrls
 import pandas as pd
 from ast import literal_eval
