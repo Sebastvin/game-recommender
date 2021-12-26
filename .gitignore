@@ -7,3 +7,10 @@ pictures
 cosine_sim.csv
 /static/pictures
 .ipynb_checkpoints
+/datasets/comeon.csv
+/datasets/dataset_games.csv
+/datasets/links.txt
+/datasets/new_features.csv
+/datasets/result.csv
+/datasets/url_images.csv
+/datasets/urls_to_games.csv
