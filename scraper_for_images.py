@@ -1,10 +1,13 @@
 # code from https://medium.com/geekculture/scrape-google-images-with-python-f9a20cda1355
 
-import requests, lxml, re, json
-from bs4 import BeautifulSoup
-import urllib
+import json
+import lxml
 import random
+import re
+import requests
 import time
+import urllib
+from bs4 import BeautifulSoup
 
 
 def get_img(titleGame: str, index):
@@ -106,3 +109,5 @@ def listUrls(data):
         result.append(get_img(x))
 
     return result
+
+
