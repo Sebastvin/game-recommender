@@ -8,6 +8,51 @@ body
     background-color: rgb(24,9,48);
 }
 
+.input-group
+{
+  padding-right: 10px;
+  border-color: grey;
+}
+
+.search
+{
+   font-weight: bold;
+   color: purple;
+   border-width: 2px;
+   border-color: white;
+   background-color: rgb(24,9,48);
+}
+
+.title
+{
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.name-game
+{
+    font-weight: bold;
+}
+
+.link
+{
+  position: absolute;
+  top: 370px;
+  left: 10px;
+  background-color: black;
+  font-weight: bold;
+  border-color: yellow;
+}
+
+.score
+{
+  position: absolute;
+  top: 380px;
+  left: 200px;
+  font-weight: bold;
+}
+
+
 
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);
@@ -15,13 +60,15 @@ body
   margin-bottom: 0;
   color: black;
   height: 90%;
+  border-color: grey;
   background-color: rgb(24,9,48);
 }
 
 .form-control
 {
     color: green;
-    border-style: none;
+    border-width: 2px;
+    border-color: white;
     background-color: rgb(24,9,48);
 }
 

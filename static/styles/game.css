@@ -9,14 +9,35 @@
   margin-bottom: 0;
   color: black;
   height: 90%;
-  border: none;
   background: rgb(24,9,48);
+}
+
+.input-group
+{
+  padding-right: 10px;
+
+}
+
+.search
+{
+   font-weight: bold;
+   color: purple;
+   border-width: 2px;
+   border-color: white;
+   background-color: rgb(24,9,48);
+}
+
+.title
+{
+    padding-left: 15px;
+    font-weight: bold;
 }
 
 .form-control
 {
     color: green;
-    border-style: none;
+    border-width: 2px;
+    border-color: white;
     background: rgb(24,9,48);
 }
 
