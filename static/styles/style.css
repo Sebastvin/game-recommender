@@ -20,9 +20,9 @@ body
 
 .form-control
 {
-    color: red;
+    color: green;
     border-style: none;
-     background-color: rgb(24,9,48);
+    background-color: rgb(24,9,48);
 }
 
 @media (min-width: 768px) {
