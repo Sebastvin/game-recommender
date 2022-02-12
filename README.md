@@ -43,7 +43,7 @@ Link to website: https://game-recommender-engine.herokuapp.com/
   
 Source : [Cosine Similarity](https://www.sciencedirect.com/topics/computer-science/cosine-similarity)
 
-### Sources of the datasets 
+### Sources: 
 
 The projects were inspired by: 
 <br />1.https://github.com/subhamrex/Movie_Recommendation_System_with_Web_App
