@@ -16,7 +16,7 @@ The entire database(title, genre, score, description, etc) was scraped from meta
 
 # Note
 
-## The Game Recommendation system
+## The Game Recommendation engine
 
 The images were also scraped by searching for the game title on google images and downloading the first 3 records.
 They are stored on a separate server and are downloaded via a link that has been corrected for the game title. Some image resolutions may be in poorer quality.
