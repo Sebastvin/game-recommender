@@ -54,7 +54,7 @@ Some pieces of code have been copied from other sources and are mentioned in the
 
 Screen from my web-app:
 
-<img src="https://raw.githubusercontent.com/Sebastvin/game-recommender/main/static/image/screen.png" alt="game recommender"/>
+<img src="https://raw.githubusercontent.com/Sebastvin/game-recommender/main/static/image/mywebsite.png" alt="game recommender"/>
 
 [python]: https://www.python.org/downloads/
 [heroku]: https://www.heroku.com/
