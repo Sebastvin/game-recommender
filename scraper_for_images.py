@@ -7,9 +7,6 @@ import random
 import time
 
 
-
-
-
 def get_img(titleGame: str, index):
     agents = ["Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102",
               "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36 "
@@ -23,7 +20,6 @@ def get_img(titleGame: str, index):
               ]
 
     random_agent = random.randint(0, 6)
-
 
     headers = {
         "User-Agent": agents[random_agent]
@@ -53,13 +49,13 @@ def get_img(titleGame: str, index):
     matched_images_data_json = json.loads(matched_images_data_fix)
 
     # https://regex101.com/r/pdZOnW/3
-    matched_google_image_data = re.findall(r'\[\"GRID_STATE0\",null,\[\[1,\[0,\".*?\",(.*),\"All\",', matched_images_data_json)
+    matched_google_image_data = re.findall(r'\[\"GRID_STATE0\",null,\[\[1,\[0,\".*?\",(.*),\"All\",',
+                                           matched_images_data_json)
 
     # https://regex101.com/r/NnRg27/1
     matched_google_images_thumbnails = ', '.join(
         re.findall(r'\[\"(https\:\/\/encrypted-tbn0\.gstatic\.com\/images\?.*?)\",\d+,\d+\]',
                    str(matched_google_image_data))).split(', ')
-
 
     # removing previously matched thumbnails for easier full resolution image matches.
     removed_matched_google_images_thumbnails = re.sub(
@@ -70,12 +66,11 @@ def get_img(titleGame: str, index):
     matched_google_full_resolution_images = re.findall(r"(?:'|,),\[\"(https:|http.*?)\",\d+,\d+\]",
                                                        removed_matched_google_images_thumbnails)
 
-
     # print('\nFull Resolution Images:')  # in order
     counter = 0
 
     for index, fixed_full_res_image in enumerate(matched_google_full_resolution_images):
-        counter +=1
+        counter += 1
         # https://stackoverflow.com/a/4004439/15164646 comment by Frédéric Hamidi
         original_size_img_not_fixed = bytes(fixed_full_res_image, 'ascii').decode('unicode-escape')
         original_size_img = bytes(original_size_img_not_fixed, 'ascii').decode('unicode-escape')
@@ -105,15 +100,9 @@ def get_img(titleGame: str, index):
         urllib.request.urlretrieve(original_size_img, f'pictures/{index}_{counter}.jpg')
 
 
-
-
-
-
-
 def listUrls(data):
     result = []
     for x in data:
         result.append(get_img(x))
 
     return result
-
