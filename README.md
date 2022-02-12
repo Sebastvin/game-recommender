@@ -1,4 +1,4 @@
-# Game recommendation system with analysis of key words using flask and ML.
+# Game recommendation engine with analysis of key words using flask and ML.
 
 
 [<img align="left" alt="p1" width="26px" style="margin-left:.6em" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/flask.svg"/>][flask]
