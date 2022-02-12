@@ -129,4 +129,4 @@ if __name__ == '__main__':
 
     # Print output list
     result = pd.concat(outputs)
-    result.to_csv('datasets/comeon.csv', index=False)
+    result.to_csv('datasets/features.csv', index=False)

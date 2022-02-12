@@ -11,7 +11,7 @@ pd.options.mode.chained_assignment = None
 
 # Read datasets
 metadata = pd.read_csv('datasets/final_dataset.csv', converters={'platform': literal_eval})
-features = pd.read_csv('datasets/comeon.csv')
+features = pd.read_csv('datasets/features.csv')
 
 # Add features to metadata
 metadata = metadata.join(features)
