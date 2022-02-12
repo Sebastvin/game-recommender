@@ -8,6 +8,7 @@
 [<img align="left" alt="p5" width="26px" style="margin-left:.6em" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/pandas.svg"/>][pandas]
 
 <br />
+<br />
 
 The game recommendation system recommends games that have the most similar keywords, starting with title, platform, game genre, developer and description.
 
@@ -35,6 +36,7 @@ Link to website: https://game-recommender-engine.herokuapp.com/
   Cosine similarity measures the similarity between two vectors of an inner product space. It is measured by the cosine of the angle between two vectors and determines whether two vectors are pointing in roughly the same direction. It is often used to measure document similarity in text analysis.
   
   ![image](https://user-images.githubusercontent.com/36665975/70401457-a7530680-1a55-11ea-9158-97d4e8515ca4.png)
+<br />
   Formula for calculating Cosine Similarity:
   ![image](https://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1590782185/cos_aalkpq.png)
 
