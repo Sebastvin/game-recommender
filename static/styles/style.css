@@ -1,6 +1,57 @@
 :root {
   --jumbotron-padding-y: 3rem;
+  background: rgb(24,9,48);
 }
+
+body
+{
+    background-color: rgb(24,9,48);
+}
+
+.input-group
+{
+  padding-right: 10px;
+  border-color: grey;
+}
+
+.search
+{
+   font-weight: bold;
+   color: purple;
+   border-width: 2px;
+   border-color: white;
+   background-color: rgb(24,9,48);
+}
+
+.title
+{
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.name-game
+{
+    font-weight: bold;
+}
+
+.link
+{
+  position: absolute;
+  top: 370px;
+  left: 10px;
+  background-color: black;
+  font-weight: bold;
+  border-color: yellow;
+}
+
+.score
+{
+  position: absolute;
+  top: 380px;
+  left: 200px;
+  font-weight: bold;
+}
+
 
 
 .jumbotron {
@@ -9,9 +60,17 @@
   margin-bottom: 0;
   color: black;
   height: 90%;
-  background-color: blue;
+  border-color: grey;
+  background-color: rgb(24,9,48);
 }
 
+.form-control
+{
+    color: green;
+    border-width: 2px;
+    border-color: white;
+    background-color: rgb(24,9,48);
+}
 
 @media (min-width: 768px) {
   .jumbotron {
@@ -30,15 +89,23 @@
 
 .jumbotron .container {
   max-width: 35rem;
+  border: none;
 }
+
 
 footer {
   position: relative;
-  margin-top: -150px; /* negative value of footer height */
-  height: 200px;
+  margin-top: 0px; /* negative value of footer height */
+  height: 50px;
   clear:both;
-  padding-top:150px;
+  padding-top:0px;
   text-align: center;
+  background-image: linear-gradient(180deg, rgb(24,9,48), rgb(73,173,181));
+}
+
+.card
+{
+    background-color: rgb(24,9,48);
 }
 
 .tested
@@ -46,6 +113,13 @@ footer {
    font-size: 24px;
    color: white;
    text-align: center;
+}
+
+.neonText {
+  color: white;
+  text-shadow:
+    0 0 5px white,
+    0 0 10px white;
 }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }

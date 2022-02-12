@@ -1,17 +1,16 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import pandas as pd
 from ast import literal_eval
+
 pd.options.mode.chained_assignment = None
 
-metadata = pd.read_csv('datasets/data_to_show_app.csv', converters={'index': literal_eval, 'result': literal_eval, 'url_links': literal_eval,
-                                                  'score': literal_eval})
-s = pd.Series(metadata.name_game)
-to_index = pd.read_csv('datasets/final_dataset.csv').loc[:, ['name_game']]
-
+metadata = pd.read_csv('datasets/data_to_show_app.csv',
+                       converters={'index': literal_eval, 'result': literal_eval, 'url_links': literal_eval,
+                                   'score': literal_eval})
 urls = pd.read_csv('datasets/urls.csv', converters={'urls': literal_eval}, index_col=0)
-
-
+s = pd.Series(metadata.name_game)
 app = Flask(__name__)
+
 
 # Method returns list of links to images
 def getUrls(indexes, urls):
@@ -33,8 +32,9 @@ def home():
 def bad_value():
     return render_template('error.html')
 
+
 # Page with results
-@app.route('/content',  methods=['GET', 'POST'])
+@app.route('/content', methods=['GET', 'POST'])
 def get_data():
     if request.method == 'POST' or request.method == 'GET':
         user = request.form['search']
@@ -47,7 +47,7 @@ def get_data():
             score = metadata[metadata.name_game == user].iloc[:, 4].to_list()[0]
             return render_template('content.html', game=game, link=link, score=score, user=user, links=links)
         else:
-          return render_template('error.html')
+            return render_template('error.html')
 
 
 if __name__ == "__main__":

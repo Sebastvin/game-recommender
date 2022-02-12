@@ -1,7 +1,7 @@
 :root {
   --jumbotron-padding-y: 3rem;
+  background: rgb(24,9,48);
 }
-
 
 .jumbotron {
   padding-top: var(--jumbotron-padding-y);
@@ -9,9 +9,37 @@
   margin-bottom: 0;
   color: black;
   height: 90%;
-  background-color: blue;
+  background: rgb(24,9,48);
 }
 
+.input-group
+{
+  padding-right: 10px;
+
+}
+
+.search
+{
+   font-weight: bold;
+   color: purple;
+   border-width: 2px;
+   border-color: white;
+   background-color: rgb(24,9,48);
+}
+
+.title
+{
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.form-control
+{
+    color: green;
+    border-width: 2px;
+    border-color: white;
+    background: rgb(24,9,48);
+}
 
 @media (min-width: 768px) {
   .jumbotron {
@@ -19,6 +47,7 @@
     padding-bottom: calc(var(--jumbotron-padding-y) * 2);
   }
 }
+
 
 .jumbotron p:last-child {
   margin-bottom: 0;
@@ -30,31 +59,47 @@
 
 .jumbotron .container {
   max-width: 35rem;
+  border: none;
 }
 
 .footer {
   position: relative;
-  margin-top: -150px; /* negative value of footer height */
+  margin-top: -150px;
   height: 150px;
-  clear:both;
+  clear: both;
   padding-top:20px;
   text-align: center;
+  border: none;
 }
 
 footer {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
+    width:100%;
     height: 50px;
-    ztext-align: center;
+    text-align: center;
 }
+
 
 .tested
 {
    font-size: 16px;
    color: white;
    text-align: center;
+   border: none;
+   background-image: linear-gradient(180deg, rgb(24,9,48), rgb(73,173,181));
+}
+
+.card-text
+{
+    color: red;
+}
+
+.neonText {
+  color: white;
+  text-shadow:
+    0 0 5px white,
+    0 0 10px white;
 }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }

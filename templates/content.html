@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
 <html>
 <head>
     <title>Game Recommender</title>
@@ -12,15 +13,15 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="d-flex flex-grow-1" id="navbarColor01">
-                <a href="/" class="navbar-brand">Game recommender</a>
+        <nav class="navbar navbar-light" style="background-color: rgb(108,65,188);">
+            <div class="d-flex flex-grow-1">
+                <a href="/" class="navbar-brand neonText title" style="color: white;">Game recommender</a>
                 <form class="mr-2 my-auto w-100 d-inline-block order-1" action="content" method="post">
                     <div class="input-group">
                         <input id="form-autocomplete" type="text" data-provide="typeahead"
-                               class="form-control border border-right-0 typeahead"
+                               class="form-control typeahead"
                                placeholder="Type name game..." name="search" autocomplete="off">
-                        <button class="btn btn-outline-success my-0 my-sm-0" type="submit">Search</button>
+                        <button class="btn btn-outline-success my-0 my-sm-0 search" type="submit">Search</button>
                     </div>
                 </form>
             </div>
@@ -28,23 +29,23 @@
     </header>
 
     <main role="main">
-        <div class="album py-2">
-            <div class="tested"><h3>Recommendations for: {{user}}</h3></div>
+       <center> <div class="album py-2">
+            <div class="tested neonText"><h3>Recommendations for: {{user}}</h3></div>
                 <div class="container">
-                  <div class="row">
+                  <div class="row justify-content-center">
                       {% for x in range(12)%}
-                        <div class="col-md-4">
-                          <div class="card border-warning mb-3 box-shadow" style="height: 420px;">
-                            <img class="card-img-top" width="200" height="300"
+                        <div class="col-lg-4 col-md-8 col-sm-8 col-8">
+                          <div class="card border-warning mb-4 box-shadow" style="height: 420px; width: 300px;">
+                            <img class="card-img-top" width="80" height="280"
                                  src="{{links[x]}}">
                             <div class="card-body">
-                              <p class="card-text">{{game[x]}}</p>
+                              <p class="card-text text-center neonText name-game">{{game[x]}}</p>
                               <div class="d-flex justify-content-between align-items-center">
                                             <a href="{{link[x]}}" target="_blank"
-                                               class="btn btn-dark btn-outline-secondary" role="button">Link</a>
+                                               class="btn btn-dark btn-outline-secondary neonText link" role="button">Link</a>
                                 <div class="btn-group">
                                 </div>
-                                <small class="text-muted">SCORE {{score[x]}}</small>
+                                <small class="neonText score">SCORE {{score[x]}}</small>
                               </div>
                             </div>
                           </div>
@@ -53,6 +54,7 @@
                   </div>
             </div>
         </div>
+           </center>
     </main>
 
     <script>
@@ -61,7 +63,7 @@
 
 
     <footer class="text-muted">
-      <div class="container">
+      <div class="container neonText">
         <p>Copyright &copy; Sebastian Malon 2021</p>
       </div>
     </footer>
