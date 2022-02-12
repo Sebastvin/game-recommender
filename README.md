@@ -10,7 +10,7 @@
 <br />
 <br />
 
-The game recommendation system recommends games that have the most similar keywords, starting with title, platform, game genre, developer and description.
+The game recommendation engine recommends games that have the most similar keywords, starting with title, platform, game genre, developer and description.
 
 The entire database(title, genre, score, description, etc) was scraped from metacritic (https://www.metacritic.com/browse/games/score/metascore/all/all/filtered to be exact from this subpage) using `beautifulsoup4`.
 
